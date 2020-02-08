@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
@@ -15,7 +15,7 @@ test('Shows the Products list header', () => {
   // ...
 
   // Act
-  const { getByText } = render(<App />);
+  const {getByText} = render(<App />);
   // Assert
   expect(getByText('Products')).toBeTruthy();
 });

@@ -3,7 +3,7 @@
 + R: npm ci && npm start must start the application locally
 + Add all requirements to todo.txt
 + Add vim *.swp files to .gitignore
-- Get Prettier formatter working with 'npm run format'
++ Get Prettier formatter working with 'npm run format'
 - Clean the template
 - Split the app into initial components: Greetings, Products, Cart
 - Render all products in a table
