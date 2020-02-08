@@ -1,8 +1,15 @@
-- R: Please use the project template:
++ R: Please use the project template:
      https://github.com/unicef-new-zealand/frontend_test-master
-- R: npm ci && npm start must start the application locally
++ R: npm ci && npm start must start the application locally
++ Add all requirements to todo.txt
++ Add vim *.swp files to .gitignore
+- Get Prettier formatter working with 'npm run format'
+- Clean the template
+- Split the app into initial components: Greetings, Products, Cart
+- Render all products in a table
 - R: Products should be listed in this format: product name, price, link to
      add product
+- Setup redux and react-redux
 - R: Must be able to add a product to the cart.
 - R: Must be able to view current products in the cart.
 - R: Cart items should visually show: product name, price, quantity, total and
@@ -12,6 +19,7 @@
 - R: Adding an existing item will only update cart product quantity (e.g.
      adding the same product twice will NOT create two cart items).
 - R: All prices should be displayed to 2 decimal places.
+- Implement switching between Products and Cart views.
 - R: We expect all tests to always be run-able state.
 - R: Please put clear instructions on how to run your code into the README.md
      in the root directory.
