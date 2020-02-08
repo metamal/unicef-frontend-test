@@ -5,11 +5,10 @@
 + Add vim *.swp files to .gitignore
 + Get Prettier formatter working with 'npm run format'
 + Split the app into initial components: Greetings, Products, Cart
-- Clean the template
-- Render all products in a table
++ Render all products in a table
+- Setup redux and react-redux
 - R: Products should be listed in this format: product name, price, link to
      add product
-- Setup redux and react-redux
 - R: Must be able to add a product to the cart.
 - R: Must be able to view current products in the cart.
 - R: Cart items should visually show: product name, price, quantity, total and

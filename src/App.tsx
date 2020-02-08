@@ -6,7 +6,7 @@ import {Cart} from './Cart';
 
 export const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Products />
       <Cart />
