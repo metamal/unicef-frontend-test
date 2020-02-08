@@ -1,22 +1,15 @@
-import React from 'react';
 import './App.css';
+import React from 'react';
+import {Header} from './Header';
+import {Products} from './Products';
+import {Cart} from './Cart';
 
-const App = () => {
+export const App = () => {
   return (
     <div className="App">
-      <p>
-        Welcome to the UNICEF front end test
-        <span aria-label="hand-wave" role="img">
-          👋
-        </span>
-      </p>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <p>Products</p>
-      <p>Cart</p>
+      <Header />
+      <Products />
+      <Cart />
     </div>
   );
 };
-
-export default App;
