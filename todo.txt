@@ -20,7 +20,7 @@
      a button to remove item.
 + R: Must be able to remove an item from the cart.
 + R: We expect all tests to always be run-able state.
-- R: Please put clear instructions on how to run your code into the README.md
++ R: Please put clear instructions on how to run your code into the README.md
      in the root directory.
 - R: Please stop before 2 hours and make a final commit if you run out of time.
 - R: Send us a public link to your GitHub, GitLab or Bitbucket repository over

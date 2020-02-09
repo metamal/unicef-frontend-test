@@ -1,8 +1,13 @@
 # Unicef Front End Template 🦄🚀
 
-< add documentation here >
+## Project Setup
 
----
+- You need to have node.js and npm installed first;
+- Do `npm ci` to install the project's dependencies;
+- Use `npm start` to run the project locally in a browser;
+- Use `npm test` to run unit tests;
+- Use `npm run format` to format the source code using Prettier;
+- Use `npm run build` to build the project;
 
 ## Test Instructions
 
