@@ -29,6 +29,22 @@ const makeTableRows = (cart: CartState) => {
   }, []);
 };
 
+const makeFootRow = (cart: CartState) => {
+  const total = products.reduce((sum, {price}, i) => sum + price * cart[i], 0);
+  const totalString = `$${total}`;
+  return (
+    <tfoot>
+      <tr>
+        <th className="u-right" colSpan={3}>
+          Totals:
+        </th>
+        <th>{totalString}</th>
+        <th> </th>
+      </tr>
+    </tfoot>
+  );
+};
+
 interface ShoppingCartTableProps {
   cart: CartState;
 }
@@ -36,6 +52,7 @@ interface ShoppingCartTableProps {
 const ShoppingCartTable = (props: ShoppingCartTableProps) => {
   const {cart} = props;
   const rows = makeTableRows(cart);
+  const footRow = makeFootRow(cart);
   return (
     <table className="c-cart__table">
       <thead>
@@ -48,6 +65,7 @@ const ShoppingCartTable = (props: ShoppingCartTableProps) => {
         </tr>
       </thead>
       <tbody>{rows}</tbody>
+      {footRow}
     </table>
   );
 };

@@ -12,12 +12,12 @@
      add product
 + R: Must be able to add a product to the cart.
 + R: Must be able to view current products in the cart.
++ R: Adding an existing item will only update cart product quantity (e.g.
+     adding the same product twice will NOT create two cart items).
++ R: Cart items should be 'tallied up' in a total field to give the price total.
 - R: Cart items should visually show: product name, price, quantity, total and
      a button to remove item.
 - R: Must be able to remove an item from the cart.
-- R: Cart items should be 'tallied up' in a total field to give the price total.
-- R: Adding an existing item will only update cart product quantity (e.g.
-     adding the same product twice will NOT create two cart items).
 - R: All prices should be displayed to 2 decimal places.
 - R: We expect all tests to always be run-able state.
 - R: Please put clear instructions on how to run your code into the README.md
