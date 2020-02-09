@@ -6,6 +6,7 @@ import {
   ActionTypes,
   NAVIGATE_TO_CART,
   NAVIGATE_TO_PRODUCTS,
+  REMOVE_ITEM,
   noop,
 } from './actions';
 
@@ -39,6 +40,12 @@ const cartReducer = (
     case ADD_ITEM: {
       const newState = [...state];
       newState[action.productIndex] += 1;
+      return newState;
+    }
+    case REMOVE_ITEM: {
+      const i = action.productIndex;
+      const newState = [...state];
+      newState[i] = Math.max(0, state[i] - 1);
       return newState;
     }
   }

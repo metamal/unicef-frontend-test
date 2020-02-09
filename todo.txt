@@ -16,10 +16,10 @@
      adding the same product twice will NOT create two cart items).
 + R: Cart items should be 'tallied up' in a total field to give the price total.
 + R: All prices should be displayed to 2 decimal places.
-- R: Cart items should visually show: product name, price, quantity, total and
++ R: Cart items should visually show: product name, price, quantity, total and
      a button to remove item.
-- R: Must be able to remove an item from the cart.
-- R: We expect all tests to always be run-able state.
++ R: Must be able to remove an item from the cart.
++ R: We expect all tests to always be run-able state.
 - R: Please put clear instructions on how to run your code into the README.md
      in the root directory.
 - R: Please stop before 2 hours and make a final commit if you run out of time.

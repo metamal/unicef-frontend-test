@@ -38,8 +38,21 @@ export const addItem = (productIndex: number): AddItemAction => ({
   productIndex,
 });
 
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+
+export interface RemoveItemAction {
+  type: typeof REMOVE_ITEM;
+  productIndex: number;
+}
+
+export const removeItem = (productIndex: number): RemoveItemAction => ({
+  type: REMOVE_ITEM,
+  productIndex,
+});
+
 export type ActionTypes =
   | AddItemAction
   | NavigateToCartAction
   | NavigateToProductsAction
-  | NoAction;
+  | NoAction
+  | RemoveItemAction;

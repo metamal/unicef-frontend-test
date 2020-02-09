@@ -1,30 +1,42 @@
 import './Cart.css';
 import React from 'react';
 import {useDispatch} from 'react-redux';
-import {navigateToProducts} from './actions';
+import {navigateToProducts, removeItem} from './actions';
 import {CartState, useTypedSelector} from './reducers';
 import {products} from './mock-data/product-list';
 import {getCurrencyFormat} from './helpers';
 
-const makeRow = (name: string, price: number, i: number, quantity: number) => {
+type onClickRemoveType = (productIndex: number) => void;
+
+const makeRow = (
+  name: string,
+  price: number,
+  i: number,
+  quantity: number,
+  onClickRemove: onClickRemoveType,
+) => {
   const priceString = getCurrencyFormat(price);
   const total = price * quantity;
   const totalString = getCurrencyFormat(total);
+  const onClick = () => onClickRemove(i);
   return (
     <tr key={i}>
       <td>{name}</td>
       <td className="u-right">{priceString}</td>
       <td className="u-right">{quantity}</td>
       <td className="u-right">{totalString}</td>
+      <td>
+        <button onClick={onClick}>Remove</button>
+      </td>
     </tr>
   );
 };
 
-const makeTableRows = (cart: CartState) => {
+const makeTableRows = (cart: CartState, onClickRemove: onClickRemoveType) => {
   return products.reduce((acc: JSX.Element[], {name, price}, i) => {
     const quantity = cart[i];
     if (quantity > 0) {
-      acc.push(makeRow(name, price, i, quantity));
+      acc.push(makeRow(name, price, i, quantity, onClickRemove));
     }
     return acc;
   }, []);
@@ -52,7 +64,10 @@ interface ShoppingCartTableProps {
 
 const ShoppingCartTable = (props: ShoppingCartTableProps) => {
   const {cart} = props;
-  const rows = makeTableRows(cart);
+  const dispatch = useDispatch();
+  const onClickRemove = (productIndex: number) =>
+    dispatch(removeItem(productIndex));
+  const rows = makeTableRows(cart, onClickRemove);
   const footRow = makeFootRow(cart);
   return (
     <table className="c-cart__table">
