@@ -8,9 +8,9 @@
 + Render all products in a table
 + Setup redux and react-redux
 + Implement switching between Products and Cart views.
-- R: Products should be listed in this format: product name, price, link to
++ R: Products should be listed in this format: product name, price, link to
      add product
-- R: Must be able to add a product to the cart.
++ R: Must be able to add a product to the cart.
 - R: Must be able to view current products in the cart.
 - R: Cart items should visually show: product name, price, quantity, total and
      a button to remove item.

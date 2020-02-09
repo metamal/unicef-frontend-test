@@ -1,14 +1,18 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import {products} from './mock-data/product-list';
-import {navigateToCart} from './actions';
+import {addItem, navigateToCart} from './actions';
 
-const getRows = () => {
+const getRows = (onClickAdd: (productIndex: number) => void) => {
   return products.map(({name, price}, i) => {
+    const onClick = () => onClickAdd(i);
     return (
       <tr key={i}>
         <td>{name}</td>
         <td className="u-right">{price}</td>
+        <td>
+          <button onClick={onClick}>Add to cart</button>
+        </td>
       </tr>
     );
   });
@@ -16,8 +20,9 @@ const getRows = () => {
 
 export const Products = () => {
   const dispatch = useDispatch();
+  const onClickAdd = (productIndex: number) => dispatch(addItem(productIndex));
   const onClickNavigate = () => dispatch(navigateToCart());
-  const rows = getRows();
+  const rows = getRows(onClickAdd);
   return (
     <>
       <h2>Products</h2>

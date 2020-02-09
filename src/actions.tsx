@@ -26,7 +26,20 @@ export const navigateToProducts = (): NavigateToProductsAction => ({
   type: NAVIGATE_TO_PRODUCTS,
 });
 
+export const ADD_ITEM = 'ADD_ITEM';
+
+export interface AddItemAction {
+  type: typeof ADD_ITEM;
+  productIndex: number;
+}
+
+export const addItem = (productIndex: number): AddItemAction => ({
+  type: ADD_ITEM,
+  productIndex,
+});
+
 export type ActionTypes =
+  | AddItemAction
   | NavigateToCartAction
   | NavigateToProductsAction
   | NoAction;
