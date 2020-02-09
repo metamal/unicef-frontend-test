@@ -4,11 +4,12 @@ import {useDispatch} from 'react-redux';
 import {navigateToProducts} from './actions';
 import {CartState, useTypedSelector} from './reducers';
 import {products} from './mock-data/product-list';
+import {getCurrencyFormat} from './helpers';
 
 const makeRow = (name: string, price: number, i: number, quantity: number) => {
-  const priceString = `$${price}`;
+  const priceString = getCurrencyFormat(price);
   const total = price * quantity;
-  const totalString = `$${total}`;
+  const totalString = getCurrencyFormat(total);
   return (
     <tr key={i}>
       <td>{name}</td>
@@ -31,7 +32,7 @@ const makeTableRows = (cart: CartState) => {
 
 const makeFootRow = (cart: CartState) => {
   const total = products.reduce((sum, {price}, i) => sum + price * cart[i], 0);
-  const totalString = `$${total}`;
+  const totalString = getCurrencyFormat(total);
   return (
     <tfoot>
       <tr>

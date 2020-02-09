@@ -1,7 +1,9 @@
+import './Products.css';
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import {products} from './mock-data/product-list';
 import {addItem, navigateToCart} from './actions';
+import {getCurrencyFormat} from './helpers';
 
 const getRows = (onClickAdd: (productIndex: number) => void) => {
   return products.map(({name, price}, i) => {
@@ -9,7 +11,7 @@ const getRows = (onClickAdd: (productIndex: number) => void) => {
     return (
       <tr key={i}>
         <td>{name}</td>
-        <td className="u-right">{price}</td>
+        <td className="u-right">{getCurrencyFormat(price)}</td>
         <td>
           <button onClick={onClick}>Add to cart</button>
         </td>
@@ -26,7 +28,7 @@ export const Products = () => {
   return (
     <>
       <h2>Products</h2>
-      <table>
+      <table className="c-products__table">
         <tbody>{rows}</tbody>
       </table>
       <button className="nav-btn" onClick={onClickNavigate}>
