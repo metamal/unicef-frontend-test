@@ -6,7 +6,8 @@
 + Get Prettier formatter working with 'npm run format'
 + Split the app into initial components: Greetings, Products, Cart
 + Render all products in a table
-- Setup redux and react-redux
++ Setup redux and react-redux
++ Implement switching between Products and Cart views.
 - R: Products should be listed in this format: product name, price, link to
      add product
 - R: Must be able to add a product to the cart.
@@ -18,7 +19,6 @@
 - R: Adding an existing item will only update cart product quantity (e.g.
      adding the same product twice will NOT create two cart items).
 - R: All prices should be displayed to 2 decimal places.
-- Implement switching between Products and Cart views.
 - R: We expect all tests to always be run-able state.
 - R: Please put clear instructions on how to run your code into the README.md
      in the root directory.
